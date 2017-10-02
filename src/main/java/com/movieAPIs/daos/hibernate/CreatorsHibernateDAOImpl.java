@@ -20,9 +20,8 @@ public class CreatorsHibernateDAOImpl implements CreatorsDao {
 		
 	}
 
-	public Creators getCreator(String name) {
-		//sessionFactory.getCurrentSession().createQuery()
-		return null;
+	public List<Creators> getCreator(String name) {
+		return sessionFactory.getCurrentSession().createQuery("from com.movieAPIs.beans.Creators creators where creators.name like ?").setParameter(0, name).list();
 	}
 
 	public void deleteField(int id) {

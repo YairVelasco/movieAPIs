@@ -38,7 +38,7 @@ public class CreatorsDaoImpl implements CreatorsDao{
 	
 	
 	
-	public Creators getCreator(String name) {
+	public List<Creators> getCreator(String name) {
 		return null;
 	}
 

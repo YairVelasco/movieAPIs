@@ -66,7 +66,7 @@ public class CreatorsServiceImpl implements CreatorsService {
 
 
 
-	public Creators getCreator(String name) {
+	public List<Creators> getCreator(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

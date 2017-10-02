@@ -25,9 +25,8 @@ public class CreatorsHibServiceImpl implements CreatorsService {
 	}
 	
 	@Transactional
-	public Creators getCreator(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Creators> getCreator(String name) {
+		return creatorsDao.getCreator(name);
 	}
 	
 	@Transactional
