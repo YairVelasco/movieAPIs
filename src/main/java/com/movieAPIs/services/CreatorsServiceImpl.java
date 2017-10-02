@@ -62,5 +62,21 @@ public class CreatorsServiceImpl implements CreatorsService {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+
+	public Creators getCreator(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	public void EditCreator(Creators creator) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

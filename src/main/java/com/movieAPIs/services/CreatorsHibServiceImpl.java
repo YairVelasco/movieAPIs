@@ -32,14 +32,18 @@ public class CreatorsHibServiceImpl implements CreatorsService {
 	
 	@Transactional
 	public void deleteField(int id) {
-		// TODO Auto-generated method stub
+		creatorsDao.deleteField(id);
 
 	}
 
 	@Transactional
 	public List<Creators> findAllCreators() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return creatorsDao.findAllCreators();
+	}
+	@Transactional
+	public void EditCreator(Creators creator) throws Exception {
+		creatorsDao.EditCreator(creator);
+		
 	}
 
 }

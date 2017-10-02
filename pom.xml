@@ -18,12 +18,12 @@
 
 		<!-- Context version -->
 		<context.version>4.3.11.RELEASE</context.version>
-		
+
 		<!--Hibernate version -->
 		<hibernate.version>4.3.0.Final</hibernate.version>
 	</properties>
 
-		<!-- Spring dependencies -->
+	<!-- Spring dependencies -->
 
 	<dependencies>
 		<dependency>
@@ -45,8 +45,8 @@
 		</dependency>
 
 		<!-- Hibernate resources -->
-		
-		
+
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -59,17 +59,21 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
-		
-		
+
+
+
 		<!-- MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
-		
 
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 
 
 

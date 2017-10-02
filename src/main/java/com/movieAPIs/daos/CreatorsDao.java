@@ -14,4 +14,5 @@ public interface CreatorsDao {
 	public Creators getCreator(String name);
 	public void deleteField(int id);
 	public List<Creators> findAllCreators() throws Exception;
+	public void EditCreator(Creators creator) throws Exception;
 }

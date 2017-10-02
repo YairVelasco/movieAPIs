@@ -84,4 +84,11 @@ public class CreatorsDaoImpl implements CreatorsDao{
 		}
 	}
 
+
+
+	public void EditCreator(Creators creator) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
