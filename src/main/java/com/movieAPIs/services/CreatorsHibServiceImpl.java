@@ -9,11 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.movieAPIs.beans.Creators;
 import com.movieAPIs.daos.CreatorsDao;
-@Service
-public class CreatorsHibServiceImpl implements CreatorsHibService {
+import com.movieAPIs.daos.hibernate.CreatorsHibernateDAOImpl;
+@Service("HibService")
+public class CreatorsHibServiceImpl implements CreatorsService {
+	
 	
 	@Autowired
-	
+	@Qualifier("HibRepository")
 	private CreatorsDao creatorsDao;
 	
 	@Transactional

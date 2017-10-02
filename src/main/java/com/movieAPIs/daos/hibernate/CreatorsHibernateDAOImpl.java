@@ -1,4 +1,4 @@
-package com.movieAPIs.daos;
+package com.movieAPIs.daos.hibernate;
 
 import java.util.List;
 
@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.movieAPIs.beans.Creators;
-@Repository("forHib")
+import com.movieAPIs.daos.CreatorsDao;
+@Repository("HibRepository")
 public class CreatorsHibernateDAOImpl implements CreatorsDao {
 	
 	@Autowired
@@ -16,6 +17,7 @@ public class CreatorsHibernateDAOImpl implements CreatorsDao {
 
 	public void addNewCreator(Creators creator) throws Exception {
 		sessionFactory.getCurrentSession().save(creator);
+		
 	}
 
 	public Creators getCreator(String name) {

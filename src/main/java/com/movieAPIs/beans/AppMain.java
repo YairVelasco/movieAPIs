@@ -1,17 +1,12 @@
 package com.movieAPIs.beans;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.movieAPIs.services.CreatorsHibService;
-import com.movieAPIs.services.CreatorsHibServiceImpl;
 import com.movieAPIs.services.CreatorsService;
-import com.movieAPIs.services.CreatorsServiceImpl;
 
 public class AppMain {
 
@@ -19,15 +14,18 @@ public class AppMain {
 		
 		//Instantiation of the POJO we need to send data to the DB
 		Creators newCreator = new Creators();
-		newCreator.setIdCreators(12);
+		newCreator.setIdCreators(22);
 		newCreator.setName("Nobody");
 		newCreator.setImagePath("dont know man");
+		
+		Creators newCreators2 = new Creators(23,"asd,","dlkamsd");
 		
 		//We  set the application context to say Spring we are using "beans.xml"
 		@SuppressWarnings("resource")
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/movieAPIs/xml/beans.xml");
 		//get the service bean we need to send data to the table
-		CreatorsHibService cd = (CreatorsHibService) appContext.getBean(CreatorsHibServiceImpl.class);
+		CreatorsService cs =  appContext.getBean("JdbcService",CreatorsService.class);
+		CreatorsService cd = appContext.getBean("HibService",CreatorsService.class);
 		
 		Map<Integer, String> datos = new HashMap<Integer, String>();
 		datos.put(1, "uno");
@@ -45,13 +43,13 @@ public class AppMain {
 		
 		
 		//We do the connection to the DB and send the object 'newCreator'
-		/*try {
-			cd.deleteField(10);
-			cd.addNewCreator(newCreator);
+		try {
+			//cd.deleteField();
+			cs.addNewCreator(newCreators2);
 		} catch (Exception e) {
 			System.out.println("The error is in MAIN");
 			throw e;
-		}*/
+		}
 	}
 
 }

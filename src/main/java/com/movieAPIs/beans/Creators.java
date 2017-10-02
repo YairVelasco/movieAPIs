@@ -4,15 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.hibernate.annotations.Entity;
+
 
 /**
  * @author Admin
  *This class is a POJO class for the table 'creators'
  */
-@Entity
+@Entity(name="creators")
+@Table(name="creators")
 public class Creators {
 	@Id
 	@Column

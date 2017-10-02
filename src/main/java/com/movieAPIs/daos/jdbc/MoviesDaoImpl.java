@@ -1,6 +1,7 @@
-package com.movieAPIs.daos;
+package com.movieAPIs.daos.jdbc;
 
 import com.movieAPIs.beans.Movies;
+import com.movieAPIs.daos.MoviesDao;
 
 public class MoviesDaoImpl implements MoviesDao{
 

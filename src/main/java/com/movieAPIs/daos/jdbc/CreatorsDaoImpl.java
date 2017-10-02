@@ -1,4 +1,4 @@
-package com.movieAPIs.daos;
+package com.movieAPIs.daos.jdbc;
 
 import java.util.List;
 
@@ -10,13 +10,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.movieAPIs.beans.Creators;
+import com.movieAPIs.daos.CreatorsDao;
+import com.movieAPIs.daos.CreatorsMapper;
 
 /**
  * @author Admin
  *	Implementation of the DAO object for the table 'creators'
  *	@Repository: sets the object as a bean
  */
-@Repository("")
+@Repository("JdbcRepository")
 public class CreatorsDaoImpl implements CreatorsDao{
 	
 	//Call the object dataSource to make the connection
