@@ -1,9 +1,12 @@
 package com.movieAPIs.services;
 
+import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.orm.hibernate3.HibernateOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,14 +22,17 @@ public class CreatorsHibServiceImpl implements CreatorsService {
 	private CreatorsDao creatorsDao;
 	
 	@Transactional
-	public void addNewCreator(Creators creator) throws Exception {
+	public void addNewCreator(Creators creator)  {
 		creatorsDao.addNewCreator(creator);
 
 	}
 	
 	@Transactional
-	public List<Creators> getCreator(String name) {
-		return creatorsDao.getCreator(name);
+	public List<Creators> getCreator(String name){
+		
+	
+			return creatorsDao.getCreator(name);
+		
 	}
 	
 	@Transactional
@@ -36,12 +42,16 @@ public class CreatorsHibServiceImpl implements CreatorsService {
 	}
 
 	@Transactional
-	public List<Creators> findAllCreators() throws Exception {
+	public List<Creators> findAllCreators()  {
 		return creatorsDao.findAllCreators();
 	}
 	@Transactional
-	public void EditCreator(Creators creator) throws Exception {
-		creatorsDao.EditCreator(creator);
+	public void EditCreator(Creators creator)  {
+		try {
+			creatorsDao.EditCreator(creator);
+		} catch (HibernateOptimisticLockingFailureException e) {
+			System.out.println("We couldn't edit this row because ID "+ creator.getIdCreators() +" doesn't exist.");
+		}
 		
 	}
 

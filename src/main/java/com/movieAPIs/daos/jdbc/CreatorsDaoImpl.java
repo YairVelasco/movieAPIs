@@ -43,14 +43,14 @@ public class CreatorsDaoImpl implements CreatorsDao{
 	}
 
 	
-	public void addNewCreator(Creators creator) throws Exception {
+	public void addNewCreator(Creators creator) {
 		
 		try {
 			this.setDataSource(dataSource);
 			this.jdbcTemplate.update("insert into creators (idCreators, name, imagePath) values (?, ?, ?)", creator.getIdCreators(), creator.getName(),creator.getImagePath());
 		}catch(Exception e) {
 			System.out.println("The error is in DAOImpl");
-			throw e;
+			//throw e;
 		}
 		
 		
@@ -86,7 +86,7 @@ public class CreatorsDaoImpl implements CreatorsDao{
 
 
 
-	public void EditCreator(Creators creator) throws Exception {
+	public void EditCreator(Creators creator)  {
 		// TODO Auto-generated method stub
 		
 	}

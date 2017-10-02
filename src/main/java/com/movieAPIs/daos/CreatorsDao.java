@@ -10,9 +10,9 @@ import com.movieAPIs.beans.Creators;
  *	SETS: all the methods useful for the table.
  */
 public interface CreatorsDao {
-	public void addNewCreator(Creators creator) throws Exception;
+	public void addNewCreator(Creators creator) ;
 	public List<Creators> getCreator(String name);
 	public void deleteField(int id);
-	public List<Creators> findAllCreators() throws Exception;
-	public void EditCreator(Creators creator) throws Exception;
+	public List<Creators> findAllCreators() ;
+	public void EditCreator(Creators creator);
 }

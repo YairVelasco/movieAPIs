@@ -11,8 +11,8 @@ import com.movieAPIs.beans.Creators;
  */
 public interface CreatorsService {
 	public void addNewCreator(Creators creator) throws Exception;
-	public List<Creators> getCreator(String name);
-	public void deleteField(int id);
+	public List<Creators> getCreator(String name)throws Exception;
+	public void deleteField(int id)throws Exception;
 	public List<Creators> findAllCreators() throws Exception;
 	public void EditCreator(Creators creator) throws Exception;
 }

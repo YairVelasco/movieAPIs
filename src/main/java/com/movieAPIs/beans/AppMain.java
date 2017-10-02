@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.orm.hibernate3.HibernateOptimisticLockingFailureException;
 
 import com.movieAPIs.services.CreatorsService;
 
@@ -39,12 +40,9 @@ public class AppMain {
 		switch (opc) {
 		// //INSERT
 		case 1:
-			System.out.print("Nuevo id: ");
-			tempId = Integer.parseInt(br.readLine());
-			System.out.print("new Creator's name: ");
-			tempCreator = br.readLine();
-			System.out.print("new Creator's imagePath: ");
-			tempImagePath = br.readLine();
+			System.out.print("Nuevo id: "); tempId = Integer.parseInt(br.readLine());
+			System.out.print("new Creator's name: "); tempCreator = br.readLine();
+			System.out.print("new Creator's imagePath: "); tempImagePath = br.readLine();
 			newCreator = new Creators(tempId, tempCreator, tempImagePath);
 			try {
 				cd.addNewCreator(newCreator);
@@ -58,23 +56,18 @@ public class AppMain {
 			break;
 		// //EDIT
 		case 2:
-			System.out.print("Introduce the id you want to EDIT: ");
-			tempId = Integer.parseInt(br.readLine());
-			System.out.print("set a newer Creator's name: ");
-			tempCreator = br.readLine();
-			System.out.print("set a newer Creator's imagePath: ");
-			tempImagePath = br.readLine();
+			System.out.print("Introduce the id you want to EDIT: "); tempId = Integer.parseInt(br.readLine());
+			System.out.print("set a newer Creator's name: "); tempCreator = br.readLine();
+			System.out.print("set a newer Creator's imagePath: "); tempImagePath = br.readLine();
 			newCreator = new Creators(tempId, tempCreator, tempImagePath);
-			try {
+			
 				cd.EditCreator(newCreator);
 				System.out.println("--------------------------------------------");
 				System.out.println("The creator's id " + newCreator.getIdCreators()
 						+ " has been updated with new parameters: \nName: " + newCreator.getName() + "\nImage Path: "
 						+ newCreator.getImagePath());
-			} catch (Exception e) {
-
-				throw e;
-			}
+			
+			
 			break;
 		// //FIND_ALL
 		case 3:
@@ -93,8 +86,7 @@ public class AppMain {
 			break;
 		// //DELETE
 		case 4:
-			System.out.print("Introduce the id you want to DELETE: ");
-			tempId = Integer.parseInt(br.readLine());
+			System.out.print("Introduce the id you want to DELETE: "); tempId = Integer.parseInt(br.readLine());
 			String prompt;
 			do {
 				System.out.println("Are you sure you want to delete the item with ID: " + tempId + "? Y/N");
@@ -114,8 +106,7 @@ public class AppMain {
 			break;
 //		//SEARCH BY NAME	
 		case 5:
-			System.out.print("Type the name of the Creator you are looking for: ");
-			tempCreator = br.readLine();
+			System.out.print("Type the name of the Creator you are looking for: "); tempCreator = br.readLine();
 			try {
 				System.out.println("--------------------------------------------");
 				List<Creators> FoundCreators = cd.getCreator(tempCreator);
