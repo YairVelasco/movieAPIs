@@ -22,7 +22,8 @@ public class AppMain {
 
 		// We set the application context to say Spring we are using "beans.xml"
 		@SuppressWarnings("resource")
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/movieAPIs/xml/beans.xml");
+		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/movieAPIs/xml/beans.xml");
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("movieAPIs/src/main/webapp/WEB-INF/spring-servlet.xml");
 
 		// Get the service bean we need to send data to the table
 		CreatorsService cd = appContext.getBean("HibService", CreatorsService.class);
