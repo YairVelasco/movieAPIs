@@ -8,11 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloWorld {
 	
 	
-	@RequestMapping("SayHello")
+	@RequestMapping("/SayHello")
 	public ModelAndView showMessage() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("HelloWorld");
-		//mv.addObject("message", "Hello I am invoked by thre controller fuck yeah biatch");
 		return mv;
 	}
 }

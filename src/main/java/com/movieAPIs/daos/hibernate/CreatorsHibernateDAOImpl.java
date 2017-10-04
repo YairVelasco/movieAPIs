@@ -34,9 +34,9 @@ public class CreatorsHibernateDAOImpl implements CreatorsDao {
 		sessionFactory.getCurrentSession().createQuery("DELETE com.movieAPIs.beans.Creators creators where creators.idCreators=?").setParameter(0, id).executeUpdate();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Creators> findAllCreators()  {
-		int numb = ((Long)sessionFactory.getCurrentSession().createQuery("select count (*) from com.movieAPIs.beans.Creators").uniqueResult()).intValue();
-		System.out.println("Showing all "+ numb +" elements of Creators table\n");
+		
 		return sessionFactory.getCurrentSession().createQuery("from com.movieAPIs.beans.Creators creators order by creators.idCreators").list();
 		
 	}
