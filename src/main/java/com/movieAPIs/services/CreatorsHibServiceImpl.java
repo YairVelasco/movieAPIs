@@ -1,7 +1,5 @@
 package com.movieAPIs.services;
 
-import java.sql.SQLDataException;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.movieAPIs.beans.Creators;
 import com.movieAPIs.daos.CreatorsDao;
-import com.movieAPIs.daos.hibernate.CreatorsHibernateDAOImpl;
 @Service("HibService")
 public class CreatorsHibServiceImpl implements CreatorsService {
 	

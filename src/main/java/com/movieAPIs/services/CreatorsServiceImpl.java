@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.movieAPIs.beans.Creators;
 import com.movieAPIs.daos.CreatorsDao;
-import com.movieAPIs.daos.jdbc.CreatorsDaoImpl;
 
 /**
  * @author Admin
