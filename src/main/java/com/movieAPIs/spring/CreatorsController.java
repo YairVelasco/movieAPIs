@@ -73,7 +73,7 @@ public class CreatorsController {
 	}
 	
 	
-	@RequestMapping(value = "EditCreator", method = RequestMethod.PATCH)
+	@RequestMapping(value = "EditCreator", method = RequestMethod.PUT)
 	public @ResponseBody String EditCreator(int id, String nomb, String imgP) {
 		Creators creator = new Creators(id,nomb,imgP);
 		
