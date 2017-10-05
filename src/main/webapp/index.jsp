@@ -8,6 +8,9 @@
 </head>
 <body>
 	BREATHE
-	<a href="SayHello.html">CMON CLICK HERE</a>
+	<a href="creators.html">GET ALL CREATORS</a>
+	<br>
+	BREATHE
+	<a href="NewCreatorForm.html">New Creator</a>
 </body>
 </html>

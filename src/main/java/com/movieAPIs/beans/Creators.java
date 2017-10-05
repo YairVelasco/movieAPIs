@@ -36,9 +36,9 @@ public class Creators {
 	
 	public Map<String,String> toHashMap(){
 		Map<String,String> datos = new HashMap<String,String>();
-		datos.put("idCreators", ""+this.getIdCreators());
-		datos.put("name", this.getName());
-		datos.put("imagePath", this.getImagePath());
+		datos.put("idCreators", " "+this.getIdCreators());
+		datos.put("name", " "+this.getName());
+		datos.put("imagePath", " "+this.getImagePath());
 		return datos;
 	}
 	
